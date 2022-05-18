@@ -1,6 +1,9 @@
-import domain.*;
+package medicaloffice;
+
+
 import lombok.Getter;
 import lombok.Setter;
+import medicaloffice.domain.*;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;

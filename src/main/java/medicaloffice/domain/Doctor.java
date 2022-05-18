@@ -1,4 +1,4 @@
-package domain;
+package medicaloffice.domain;
 
 import lombok.*;
 
@@ -6,6 +6,8 @@ import lombok.*;
 @Getter
 @Setter
 @ToString(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
 public class Doctor extends Person {
 
     private MedicalSpecialty specialty;

@@ -1,4 +1,4 @@
-package domain;
+package medicaloffice.domain;
 
 public enum AppointmentStatus {
     SCHEDULED,

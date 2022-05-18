@@ -1,5 +1,7 @@
-import domain.Appointment;
-import domain.AppointmentStatus;
+package medicaloffice;
+
+import medicaloffice.domain.Appointment;
+import medicaloffice.domain.AppointmentStatus;
 
 import java.util.List;
 import java.util.stream.Collectors;
