@@ -20,6 +20,7 @@ public class Medicine {
 
     private String medicineName;
     private String companyName;
+    private Double price;
 
     @ManyToMany
     @JoinTable(

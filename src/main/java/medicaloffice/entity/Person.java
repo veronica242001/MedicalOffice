@@ -20,6 +20,7 @@ public abstract class Person {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "person_key_sequence_generator")
     @SequenceGenerator(name = "person_key_sequence_generator", sequenceName = "person_sequence", allocationSize = 1)
     private Long id;
+
     protected String firstName;
     protected String lastName;
     protected String email;

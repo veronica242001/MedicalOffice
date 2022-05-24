@@ -1,4 +1,4 @@
-package medicaloffice.rest.controller;
+package medicaloffice.controller;
 
 import medicaloffice.services.MedicalOfficeService;
 import medicaloffice.entity.Appointment;

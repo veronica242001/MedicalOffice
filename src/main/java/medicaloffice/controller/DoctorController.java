@@ -1,13 +1,12 @@
-package medicaloffice.rest.controller;
+package medicaloffice.controller;
 
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import medicaloffice.services.DoctorService;
 import medicaloffice.entity.Doctor;
-import medicaloffice.rest.dto.DoctorOutputDTO;
+import medicaloffice.dto.DoctorOutputDTO;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,8 +19,10 @@ import java.util.stream.Collectors;
 public class DoctorController {
 
     private final ModelMapper modelMapper;
-    @Autowired
-    private DoctorService doctorService;
+    private final DoctorService doctorService;
+
+    //se pune constructor pentru a se putea face uniteste
+
 
     @GetMapping("doctors")
     public List<DoctorOutputDTO> getDoctors() {
@@ -34,11 +35,11 @@ public class DoctorController {
         return doctorsDTO;
     }
 
-//    @PostMapping("doctors")
-//    public void createDoctor(@RequestBody Doctor doctor){
-//        //TODO validation
-//        doctorService.addDoctor(doctor);
-//    }
+    @PostMapping("doctors")
+    public void createDoctor(@RequestBody Doctor doctor){
+        //TODO validation
+        doctorService.addDoctor(doctor);
+    }
 
     @GetMapping("doctors/{doctorName}")
     public Doctor getDoctor(@PathVariable String doctorName) {

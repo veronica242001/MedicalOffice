@@ -36,16 +36,16 @@ public class Main implements  CommandLineRunner {
 //        List<Appointment> appointmentList2 = medicalOfficeService.listSpecificAppointments(AppointmentStatus.CANCELED);
 //        System.out.println(appointmentList2);
 
-        Doctor doctor = Doctor.builder()
-                .firstName("Maria")
-                .lastName("Ene")
-                .email("enem@gmail.com")
-                .specialty(MedicalSpecialty.NEUROLOGY)
-                .build();
-        doctorService.addDoctor(doctor);
+//        Doctor doctor = Doctor.builder()
+//                .firstName("Maria")
+//                .lastName("Ene")
+//                .email("enem@gmail.com")
+//                .specialty(MedicalSpecialty.NEUROLOGY)
+//                .build();
+//        doctorService.addDoctor(doctor);
 
-        System.out.println("Find Doctor by Name:");
-        System.out.println(doctorService.findByName("Ene"));
+//        System.out.println("Find Doctor by Name:");
+//        System.out.println(doctorService.findByName("Ene"));
 
         System.out.println("Display all doctors");
         System.out.println(doctorService.findAll());
