@@ -1,6 +1,7 @@
-package medicaloffice.domain;
+package medicaloffice.entity;
 
 import lombok.*;
+import medicaloffice.domain.*;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -26,7 +27,7 @@ public class Appointment {
 //    private Treatment treatment;
 
     @Builder
-    public Appointment ( Patient patient, Doctor doctor, Date date, AppointmentStatus appointmentStatus, Diagnosis diagnosis, Treatment treatment){
+    public Appointment (Patient patient, Doctor doctor, Date date, AppointmentStatus appointmentStatus, Diagnosis diagnosis, Treatment treatment){
 
         this.date = date;
         this.status = appointmentStatus;

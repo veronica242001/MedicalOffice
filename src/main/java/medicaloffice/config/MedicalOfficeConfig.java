@@ -1,4 +1,4 @@
-package medicaloffice;
+package medicaloffice.config;
 
 
 
