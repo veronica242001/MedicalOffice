@@ -1,7 +1,7 @@
-package medicaloffice;
+package medicaloffice.services;
 
 
-import medicaloffice.domain.Appointment;
+import medicaloffice.entity.Appointment;
 import medicaloffice.repository.MedicalOfficeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

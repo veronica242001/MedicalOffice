@@ -1,4 +1,4 @@
-package medicaloffice.domain;
+package medicaloffice.entity;
 
 import lombok.Data;
 import lombok.Getter;

@@ -1,13 +1,11 @@
-package medicaloffice.domain;
+package medicaloffice.entity;
 
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Data
 @Entity

@@ -3,8 +3,8 @@ package medicaloffice.rest.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import medicaloffice.DoctorService;
-import medicaloffice.domain.Doctor;
+import medicaloffice.services.DoctorService;
+import medicaloffice.entity.Doctor;
 import medicaloffice.rest.dto.DoctorOutputDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

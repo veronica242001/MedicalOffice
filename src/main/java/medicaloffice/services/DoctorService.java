@@ -1,12 +1,11 @@
-package medicaloffice;
+package medicaloffice.services;
 
-import medicaloffice.domain.Doctor;
+import medicaloffice.entity.Doctor;
 import medicaloffice.repository.PersonRepository;
 import medicaloffice.rest.exception.DoctorNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 

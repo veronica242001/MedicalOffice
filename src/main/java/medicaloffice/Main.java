@@ -1,14 +1,13 @@
 package medicaloffice;
 
 
-import medicaloffice.domain.Doctor;
+import medicaloffice.entity.Doctor;
 import medicaloffice.domain.MedicalSpecialty;
+import medicaloffice.services.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 ;
 
 @SpringBootApplication
@@ -16,7 +15,7 @@ public class Main implements  CommandLineRunner {
 
 
     @Autowired //injectia campurilor se face dupa ce obiectul s-a creat
-    private  DoctorService doctorService;
+    private DoctorService doctorService;
 
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
@@ -52,11 +51,12 @@ public class Main implements  CommandLineRunner {
         System.out.println(doctorService.findAll());
     }
 }
-@RestController
-class FirstController{
-    @GetMapping("/") // ii spunem ca pe path ul de route va face ceva
-    public String getSomething(){
-        return "Hello world";
-    }
 
-}
+//@RestController
+//class FirstController{
+//    @GetMapping("/") // ii spunem ca pe path ul de route va face ceva
+//    public String getSomething(){
+//        return "Hello world";
+//    }
+//
+//}

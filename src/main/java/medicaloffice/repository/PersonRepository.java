@@ -1,7 +1,7 @@
 package medicaloffice.repository;
 
-import medicaloffice.domain.Doctor;
-import medicaloffice.domain.Person;
+import medicaloffice.entity.Doctor;
+import medicaloffice.entity.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

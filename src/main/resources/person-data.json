@@ -1,6 +1,6 @@
 [
   {
-    "_class": "medicaloffice.domain.Doctor",
+    "_class": "medicaloffice.entity.Doctor",
     "type": 1,
     "firstName": "Sarah",
     "lastName": "Pop",
@@ -8,14 +8,14 @@
     "specialty": "CARDIOLOGY"
   },
   {
-    "_class": "medicaloffice.domain.Patient",
+    "_class": "medicaloffice.entity.Patient",
     "type": 2,
     "firstName": "Elena",
     "lastName": "Nicola",
     "email": "enico@gmail.com"
   },
   {
-    "_class": "medicaloffice.domain.Patient",
+    "_class": "medicaloffice.entity.Patient",
     "type": 2,
     "firstName": "Stefania",
     "lastName": "Rios",

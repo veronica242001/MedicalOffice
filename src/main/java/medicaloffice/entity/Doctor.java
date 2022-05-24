@@ -1,6 +1,7 @@
-package medicaloffice.domain;
+package medicaloffice.entity;
 
 import lombok.*;
+import medicaloffice.domain.MedicalSpecialty;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
