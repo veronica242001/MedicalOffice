@@ -1,5 +1,4 @@
-package medicaloffice;
-
+package medicaloffice.repository;
 
 
 import medicaloffice.domain.*;
@@ -10,10 +9,10 @@ import java.util.List;
 
 
 @Repository
-public interface MedicalOfficeRepository extends JpaRepository<Appointment,Long> {
+public interface MedicalOfficeRepository extends JpaRepository<Appointment, Long> {
 
 
-      List<Appointment> findAll();
+    List<Appointment> findAll();
 
 //    private MedicalOfficeRepository() {
 //        Appointment appointment = Appointment.builder()
@@ -27,9 +26,7 @@ public interface MedicalOfficeRepository extends JpaRepository<Appointment,Long>
 //                .date(Date.from(Instant.now().plus(2, ChronoUnit.DAYS)))
 //                .appointmentStatus(AppointmentStatus.SCHEDULED)
 //                .build();
-//
-//        appointmentList.add(appointment);
-//        appointmentList.add(secondAppointment);
+
 //    }
 
 }

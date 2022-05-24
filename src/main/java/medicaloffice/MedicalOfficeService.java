@@ -1,20 +1,26 @@
 package medicaloffice;
 
+
 import medicaloffice.domain.Appointment;
-import medicaloffice.domain.AppointmentStatus;
+import medicaloffice.repository.MedicalOfficeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
+
+@Service
 public class MedicalOfficeService {
-    private static final MedicalOfficeRepository repository =  MedicalOfficeRepository.getInstance();
 
-    public List<Appointment> listAllAppointments() {
+    @Autowired
+    private MedicalOfficeRepository repository;
 
-        return repository.getAppointmentList();
+    public List<Appointment> findAll() {  // TODO: add DTO
+        return repository.findAll();
     }
-    public List<Appointment> listSpecificAppointments(AppointmentStatus status) {
 
-        return repository.getAppointmentList().stream().filter( a -> a.getStatus().equals(status)).collect(Collectors.toList());
-    }
+
+//    public List<Appointment> listSpecificAppointments(AppointmentStatus status) {
+//        return repository.getAppointmentList().stream().filter( a -> a.getStatus().equals(status)).collect(Collectors.toList());
+//    }
 }

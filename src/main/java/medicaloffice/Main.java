@@ -1,46 +1,55 @@
 package medicaloffice;
 
-import medicaloffice.domain.Appointment;
-import medicaloffice.domain.AppointmentStatus;
+
 import medicaloffice.domain.Doctor;
 import medicaloffice.domain.MedicalSpecialty;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
+;
 
 @SpringBootApplication
-public class Main {
+public class Main implements  CommandLineRunner {
 
-    public static final MedicalOfficeService medicalOfficeService = new MedicalOfficeService();
-    private static final DoctorService DOCTOR_SERVICE =  new DoctorService();
+
+    @Autowired //injectia campurilor se face dupa ce obiectul s-a creat
+    private  DoctorService doctorService;
 
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
 
+
+    }
+    @Override
+    public void run(String... args) throws Exception {
         System.out.println("Welcome to Medical Office Service");
 
-        System.out.println("Display all appointments");
-        List<Appointment> appointmentList = medicalOfficeService.listAllAppointments();
-        System.out.println(appointmentList);
 
-        System.out.println("Display all canceled appointments");
-        List<Appointment> appointmentList2 = medicalOfficeService.listSpecificAppointments(AppointmentStatus.CANCELED);
-        System.out.println(appointmentList2);
+//
+//        System.out.println("Display all appointments");
+//        List<Appointment> appointmentList = medicalOfficeService.listAllAppointments();
+//        System.out.println(appointmentList);
+//
+//        System.out.println("Display all canceled appointments");
+//        List<Appointment> appointmentList2 = medicalOfficeService.listSpecificAppointments(AppointmentStatus.CANCELED);
+//        System.out.println(appointmentList2);
 
         Doctor doctor = Doctor.builder()
-                .firstName("Sarah")
-                .lastName("Pop")
-                .email("sarahp@gmail.com")
-                .specialty(MedicalSpecialty.CARDIOLOGY)
+                .firstName("Maria")
+                .lastName("Ene")
+                .email("enem@gmail.com")
+                .specialty(MedicalSpecialty.NEUROLOGY)
                 .build();
-        DOCTOR_SERVICE.addDoctor(doctor);
+        doctorService.addDoctor(doctor);
+
+        System.out.println("Find Doctor by Name:");
+        System.out.println(doctorService.findByName("Ene"));
 
         System.out.println("Display all doctors");
-        System.out.println(DOCTOR_SERVICE.findAll());
-
+        System.out.println(doctorService.findAll());
     }
 }
 @RestController
