@@ -40,16 +40,16 @@ public class DoctorController {
     }
 
     @PostMapping("doctors")
-    public ResponseEntity<?> createDoctor(@RequestBody Doctor doctor){
+    public ResponseEntity<?> createDoctor(@RequestBody Doctor doctor) {
         //TODO validation
-       Doctor added =  doctorService.addDoctor(doctor);
+        Doctor added = doctorService.addDoctor(doctor);
 
-       return added != null ? ResponseEntity.ok(added) : ResponseEntity.badRequest().body("Doctor already exists");
+        return added != null ? ResponseEntity.ok(added) : ResponseEntity.badRequest().body("Doctor already exists");
     }
 
-    @GetMapping("doctors/{doctorName}")
+    @GetMapping("doctors/{doctorId}")
     public ResponseEntity<?> getDoctor(@PathVariable Long doctorId) {
 
-        return ResponseEntity.ok( modelMapper.map(doctorService.findById(doctorId), DoctorOutputDTO.class));
+        return ResponseEntity.ok(modelMapper.map(doctorService.findById(doctorId), DoctorOutputDTO.class));
     }
 }

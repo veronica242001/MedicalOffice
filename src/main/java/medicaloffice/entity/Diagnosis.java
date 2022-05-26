@@ -1,10 +1,12 @@
 package medicaloffice.entity;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -18,4 +20,13 @@ public class Diagnosis {
 
     private String diagnosisName;
     private String details;
+
+    @Builder
+    public Diagnosis(String diagnosisName, String details) {
+        this.diagnosisName = diagnosisName;
+        this.details = details;
+    }
+
+    @OneToMany(mappedBy = "diagnosis", cascade = CascadeType.ALL)
+    private List<Appointment> appointments;
 }

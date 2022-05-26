@@ -7,4 +7,6 @@ import lombok.Data;
 public class DoctorOutputDTO {
     @JsonProperty
     private String firstName;
+    @JsonProperty
+    private String lastName;
 }

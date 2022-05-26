@@ -3,8 +3,11 @@ package medicaloffice.entity;
 import lombok.*;
 import medicaloffice.domain.MedicalSpecialty;
 
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 
 @Getter
@@ -30,4 +33,8 @@ public class Doctor extends Person {
     public String getName() {
         return String.format("Doctorul", firstName, lastName);
     }
+
+    @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)
+    private List<Appointment> appointments;
+
 }

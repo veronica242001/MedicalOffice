@@ -17,7 +17,7 @@ public class Treatment {
     private Long Id;
 
     private String details;
-    //private Map<Medicine, Integer> treatment = new HashMap<>(); // cate zile
+
 
     @ManyToMany
     @JoinTable(
@@ -25,4 +25,7 @@ public class Treatment {
             joinColumns = @JoinColumn(name = "medicine_id"),
             inverseJoinColumns = @JoinColumn(name = "treatment_id"))
     private List<Medicine> medicines;
+
+    @OneToMany(mappedBy = "treatment", cascade = CascadeType.ALL)
+    private List<Appointment> appointments;
 }

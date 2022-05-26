@@ -15,12 +15,25 @@ public class MedicalOfficeService {
     private final MedicalOfficeRepository repository;
 
     public MedicalOfficeService(MedicalOfficeRepository repository) {
+
         this.repository = repository;
     }
 
     public List<Appointment> findAll() {  // TODO: add DTO
+
         return repository.findAll();
     }
+
+    public Appointment addAppointment(Appointment appointment) {
+//        if (repository.findById(.getId()) != null) {
+//            return null;
+//        }
+        Appointment saved = repository.save(appointment);
+        return saved;
+
+    }
+
+
 
 
 //    public List<Appointment> listSpecificAppointments(AppointmentStatus status) {
