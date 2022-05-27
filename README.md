@@ -1,7 +1,7 @@
 # Medical Office :computer:
 This is my final project for Adobe Java DevCamp 2022. 
 
-I have developed an application that facilitates the management of appointments in a medical office.
+I developed an application that facilitates the management of appointments in a medical office.
 
 # Java DevCamp sessions:
 
